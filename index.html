@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>For You ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio id="bg-music" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/01/21/audio_31743c58bc.mp3" type="audio/mpeg">
+</audio>
+
+<button id="music-toggle" class="music-btn muted" title="Toggle Music">🎵</button>
+
+<div class="bg-hearts" id="bg-hearts"></div>
+
+<section id="landing-section" class="active">
+  <div class="card content-center">
+    <h1>I made something for you ❤️</h1>
+    <p>I know I hurt your feelings.<br>A simple text didn’t feel like enough,<br>so I made this for you.</p>
+    <button id="start-btn" class="btn primary-btn">Start</button>
+  </div>
+</section>
+
+<section id="game-section" class="hidden">
+  <div class="game-header">
+    <h2>Catch My Apologies</h2>
+    <div id="score-display">Hearts Collected: 0 / 10</div>
+  </div>
+  <div id="game-container">
+    <div id="basket">💌</div>
+    <div id="message-stack"></div>
+  </div>
+  <div id="game-complete" class="hidden content-center">
+    <h3>You unlocked my letters 💌</h3>
+    <button id="unlock-btn" class="btn primary-btn">Open the Letters</button>
+  </div>
+</section>
+
+<section id="letters-section" class="hidden">
+  <h2 class="section-title">Letters for You</h2>
+  <div class="envelopes-grid">
+
+    <div class="envelope-wrapper" onclick="openEnvelope(this)">
+      <div class="envelope">
+        <div class="flap"></div>
+        <div class="pocket"></div>
+        <div class="letter">
+          <h4>What I Did Wrong</h4>
+          <p>I made a joke that I thought was harmless, but I realize now it hurt you. I should have thought about your feelings first.</p>
+        </div>
+      </div>
+      <div class="env-label">Letter 1</div>
+    </div>
+
+    <div class="envelope-wrapper" onclick="openEnvelope(this)">
+      <div class="envelope">
+        <div class="flap"></div>
+        <div class="pocket"></div>
+        <div class="letter">
+          <h4>What You Mean to Me</h4>
+          <p>You’re not just my girlfriend. You’re someone who makes my days brighter just by being there.</p>
+        </div>
+      </div>
+      <div class="env-label">Letter 2</div>
+    </div>
+
+    <div class="envelope-wrapper" onclick="openEnvelope(this)">
+      <div class="envelope">
+        <div class="flap"></div>
+        <div class="pocket"></div>
+        <div class="letter">
+          <h4>My Apology</h4>
+          <p>I’m really sorry for hurting you. It was never my intention, but I take full responsibility.</p>
+        </div>
+      </div>
+      <div class="env-label">Letter 3</div>
+    </div>
+
+    <div class="envelope-wrapper" id="env-4" onclick="openEnvelope(this)">
+      <div class="envelope">
+        <div class="flap"></div>
+        <div class="pocket"></div>
+        <div class="letter final-letter">
+          <h4>One Question…</h4>
+          <p>Can you forgive me?</p>
+          <div class="btn-group">
+            <button class="btn yes-btn" onclick="submitAnswer(event, 'Yes ❤️')">Yes ❤️</button>
+            <button class="btn thinking-btn" onclick="submitAnswer(event, 'Still thinking 🤍')">Still thinking 🤍</button>
+          </div>
+        </div>
+      </div>
+      <div class="env-label">Letter 4</div>
+    </div>
+
+  </div>
+</section>
+
+<section id="final-section" class="hidden content-center">
+  <div id="final-message-container" class="card">
+    <h2 id="final-title"></h2>
+    <p id="final-text"></p>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
